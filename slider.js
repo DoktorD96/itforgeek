@@ -207,7 +207,7 @@ function makeSlider(a) {
                     break
                 }
                 q = r[m].title.$t;
-                e = ("media$thumbnail" in r[m]) ? '<img alt="' + q + '" src="' + r[m].media$thumbnail.url.replace(/\/s72\-c/, "/s1600/" style="width:' + c.thumbWidth + "px;height:" + (c.squareThumb ? c.thumbWidth + "px" : "auto") + '">' : '<img src="' + c.noThumb + '" style="width:' + c.thumbWidth + "px;height:" + (c.squareThumb ? c.thumbWidth + "px" : "auto") + '">';
+                e = ("media$thumbnail" in r[m]) ? '<img alt="' + q + '" src="' + r[m].media$thumbnail.url.replace(/\/s72\-c/, "/s" + c.thumbWidth + (c.squareThumb ? "-c" : "")) + '" style="width:' + c.thumbWidth + "px;height:" + (c.squareThumb ? c.thumbWidth + "px" : "auto") + '">' : '<img src="' + c.noThumb + '" style="width:' + c.thumbWidth + "px;height:" + (c.squareThumb ? c.thumbWidth + "px" : "auto") + '">';
                 o = ("summary" in r[m] && c.summaryLength > 0) ? r[m].summary.$t.replace(/<br ?\/?>/ig, " ").replace(/<(.*?)>/g, "").replace(/[<>]/g, "") : "";
                 o = (c.summaryLength < o.length) ? o.substring(0, c.summaryLength) + "&hellip;" : o;
                 for (var l = 0, f = r[m].link.length; l < f; l++) {
